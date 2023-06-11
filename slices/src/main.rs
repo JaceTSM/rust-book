@@ -1,4 +1,6 @@
 use std::io;
+use std::str;
+
 
 fn main() {
     println!("Please enter a sentence: ");
@@ -28,10 +30,10 @@ fn first_word(s: &str) -> &str {
 fn print_stacked(s: &str) {
     let bytes: &[u8] = s.as_bytes();
     for (i, &b) in bytes.iter().enumerate() {
-        let mut just = String::new();
-        for _ in [0..i] {
-            just.push(' ');
+        let mut just = String::from("");
+        for _ in 0..i {
+            just.push(' ')
         }
-        println!("{}{}", just, b)
+        println!("{}{}", just, str::from_utf8(&[b]).unwrap());
     }
 }
