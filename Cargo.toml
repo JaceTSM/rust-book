@@ -7,4 +7,6 @@ members = [
     "refs",
     "slices",
     "variables",
+    "structs",
+    "enums",
 ]
